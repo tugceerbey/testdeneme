@@ -4,7 +4,7 @@ import requests
 
 class TestFlightData(unittest.TestCase):
     def setUp(self):
-        
+
         self.sample_data = {
             "data": [
     {
@@ -13,6 +13,7 @@ class TestFlightData(unittest.TestCase):
       "to": "LAX",
       "date": "2022-12-13"
     },
+            
     {
       "id": 2,
       "from": "JFK",
@@ -367,44 +368,47 @@ class TestFlightData(unittest.TestCase):
       "to": "FCO",
       "date": "2024-01-11"
     }
+             
   ]
-        
+          
+        }
     def test_get_request_status_code(self):
-        //API URL
+        #API URL
         api_url = "https://flights-api.buraky.workers.dev/"
 
-        // GET isteği gönder
+        # GET isteği gönder
         response = requests.get(api_url)
 
-        //HTTP Durum kontrol et (200 başarılı yanıt)
+        #HTTP Durum kontrol et (200 başarılı yanıt)
         self.assertEqual(response.status_code, 200, f"HTTP Status Code: {response.status_code}")
 
     def test_get_request_response_data_type(self):
-        // API URL
+        # API URL
         api_url = "https://flights-api.buraky.workers.dev/"
 
-        // GET isteği gönder
+        #GET isteği gönder
         response = requests.get(api_url)
 
-        //Yanıt değerini kontrol et (string veya integer )
+        #Yanıt değerini kontrol et (string veya integer )
         self.assertTrue(isinstance(response.text, (str, int)), f"Response Data Type: {type(response.text)}")
 
-        //Yanıt değerini JSON formatinda kontol et 
-        self.assertTrue(isinstance(response.json(),list), Response Data Type is List")
-        def test_content_type_application_json(self);
-        // API URL
+        #Yanıt değerini JSON formatinda kontol et 
+        self.assertTrue(isinstance(response.json(), list), "Response Data Type is List")
+        def test_content_type_application_json(self):
+        # API URL
         api_url = "https://flights-api.buraky.workers.dev/"
-        // GET isteği gönder
+        # GET isteği gönder
         response = requests.get(api_url)
 
-        // Content-type başlık kontrol et
-        response = requests.get(api_url)
-       content_type_header = response.headers.get("Content-Type", "")
-        self.assertTrue("application/json" in content_type_header, f"Content-Type is {content_type_header}, expected application/json")
+        # Content-type başlık kontrol et
+       
+       content_type_header = 
+response.headers.get("Content-Type", "")
+        self.assertTrue("application/json" in content_type_header, f"Content-Type is 
+        {content_type_header}, expected application/json")
 
   if __name__ == "__main__":
     unittest.main()
-
 
 
 

@@ -389,6 +389,19 @@ class TestFlightData(unittest.TestCase):
         //Yanıt değerini kontrol et (string veya integer )
         self.assertTrue(isinstance(response.text, (str, int)), f"Response Data Type: {type(response.text)}")
 
+        //Yanıt değerini JSON formatinda kontol et 
+        self.assertTrue(isinstance(response.json(),list), Response Data Type is List")
+        def test_content_type_application_json(self);
+        // API URL
+        api_url = "https://flights-api.buraky.workers.dev/"
+        // GET isteği gönder
+        response = requests.get(api_url)
+
+        // Content-type başlık kontrol et
+        response = requests.get(api_url)
+       content_type_header = response.headers.get("Content-Type", "")
+        self.assertTrue("application/json" in content_type_header, f"Content-Type is {content_type_header}, expected application/json")
+
   if __name__ == "__main__":
     unittest.main()
 
